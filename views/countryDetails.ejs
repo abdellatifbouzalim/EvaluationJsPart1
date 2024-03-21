@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .details-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <h2><%= country.name.common %></h2>
+        <img src="<%= country.flags.svg %>" alt="Flag of <%= country.name.common %>" width="100">
+        <p><strong>Capital:</strong> <%= country.capital %></p>
+        <p><strong>Population:</strong> <%= country.population %></p>
+        <p><strong>Region:</strong> <%= country.region %></p>
+        <p><strong>Currency:</strong> <%= Object.values(country.currencies)[0].name %> (<%= Object.values(country.currencies)[0].symbol %>)</p>
+        <p><strong>Languages:</strong> <%= Object.values(country.languages).join(', ') %></p>
+        <p><strong>Timezones:</strong> <%= country.timezones.join(', ') %></p>
+    </div>
+</body>
+</html>

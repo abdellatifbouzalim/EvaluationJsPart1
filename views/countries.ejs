@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid black; 
+}
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste des pays</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Drapeau</th>
+                <th>Nom du pays</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% countries.forEach(country => { %>
+                <tr>
+                    <td><img src="<%= country.flags.png %>" alt="<%= country.name.common %> Flag"></td>
+                    <td><a href="/countries/countryDetails?country=<%= country.name.common %>"><%= country.name.common %></a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</body>
+</html>
